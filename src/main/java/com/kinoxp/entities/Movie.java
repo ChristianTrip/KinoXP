@@ -44,6 +44,4 @@ public class Movie {
         this.productionYear = productionYear;
         this.runningTime = runningTime;
     }
-
-
 }
