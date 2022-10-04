@@ -2,8 +2,14 @@ package com.kinoxp.entities;
 
 public enum Genres {
 
-    HORROR,
+    ACTION,
     COMEDY,
+    DRAMA,
+    FANTASY,
+    HORROR,
     ROMANCE,
-    ACTION;
+    MYSTERY,
+    THRILLER,
+    WESTERN;
+
 }
