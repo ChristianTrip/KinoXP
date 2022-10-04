@@ -31,6 +31,7 @@ Delete = Delete.
 | POST    | /movies           | Create a movie          |                           |
 | PUT     | /movies/{movieId} | Update a movieId by Id  |                           |
 | DELETE  | /movies/{movieId} | DELATE a movieId  by Id |                           |
+
 ###### Customer
 Create = Post.
 Read = Get.
