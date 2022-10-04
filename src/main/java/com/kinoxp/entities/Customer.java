@@ -1,9 +1,9 @@
 package com.kinoxp.entities;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -13,8 +13,8 @@ import java.time.LocalDateTime;
 //---------------Lombok.
 @Getter
 @Setter
-//@AllArgsConstructor
 @NoArgsConstructor
+@ToString
 //---------------Lombok.
 
 @Entity //--Et object som vi skal burger i DB-tabel. Fortæller Der skal laves en table af samme navn some object.
@@ -51,8 +51,6 @@ public class Customer {
     LocalDateTime edited;
     //---------------Fields / attributter.
 
-
-
     //---------------Constructor. Vi skal have en fordi vi bruger DTO klasser.
     public Customer(int id, String name, String phone, String email, String address, String city, String postalCode, LocalDateTime created, LocalDateTime edited) {
         this.id = id;
@@ -66,6 +64,4 @@ public class Customer {
         this.edited = edited;
     }
     //---------------Constructor.
-
-
 }
