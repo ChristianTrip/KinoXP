@@ -32,7 +32,6 @@ Delete = Delete.
 | PUT     | /movies/{movieId} | Update a movieId by Id  |                           |
 | DELETE  | /pizzas/{movieId} | DELATE a movieId  by Id |                           |
 
-
 ###### Customer
 Create = Post.
 Read = Get.
@@ -47,7 +46,6 @@ Delete = Delete.
 | PUT    | /Customer                | Get all       |                           |
 | DELETE | /Customer                | Get all       |                           |
 
-
 ####### Reservation
 Create = Post.
 Read = Get.
@@ -61,7 +59,6 @@ Delete = Delete.
 | POST   | /                      | Get all                |                           |
 | PUT    | /                      | Get all by Id          |                           |
 | DELETE | /                      | Get all by Id          |                           |
-
 
 ######## ?
 Create = Post.
