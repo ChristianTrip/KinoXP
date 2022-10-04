@@ -24,13 +24,13 @@ Read = Get.
 Update = PUT.
 Delete = Delete.
 
-| Method  | Url               | Description             | Sample Valid Request Body |
-|---------|-------------------|---------------------   -|---------------------------|
-| GET     | /movie            | Get all movie           |                           |
-| GET     | /movie/{movieId}  | Get a movie by Id       |                           |
-| POST    | /movies           | Create a movie          |                           |
-| PUT     | /movies/{movieId} | Update a movieId by Id  |                           |
-| DELETE  | /movies/{movieId} | DELATE a movieId  by Id |                           |
+| Method | Url                | Description | Sample Valid Request Body |
+|--------|--------------------|-------------|---------------------------|
+| GET    | /movie             | Get all     |                           |
+| GET    | /movie  {Movie Id} | Get all     |                           |
+| POST   | /movies            | Create      |                           |
+| PUT    | /movies            | Update      |                           |
+| DELETE | /movies            | Delete      |                           |
 
 ###### Customer
 Create = Post.
@@ -38,41 +38,28 @@ Read = Get.
 Update = PUT.
 Delete = Delete.
 
-| Method | Url                      | Description   | Sample Valid Request Body |
-|--------|--------------------------|---------------|---------------------------|
-| GET    | /Customer                | Get all       |                           |
-| GET    | /Customer  {Customer Id} | Get all       |                           |
-| POST   | /Customer                | Get all       |                           |
-| PUT    | /Customer                | Get all       |                           |
-| DELETE | /Customer                | Get all       |                           |
+| Method | Url                      | Description | Sample Valid Request Body |
+|--------|--------------------------|-------------|---------------------------|
+| GET    | /Customer                | Get all     |                           |
+| GET    | /Customer  {Customer Id} | Get all     |                           |
+| POST   | /Customer                | Create      |                           |
+| PUT    | /Customer                | Update      |                           |
+| DELETE | /Customer                | Detete      |                           |
 
-####### Reservation
+
+####### Reservation 
 Create = Post.
 Read = Get.
 Update = PUT.
 Delete = Delete.
 
-| Method | Url                    | Description            | Sample Valid Request Body |
-|--------|------------------------|------------------------|---------------------------|
-| GET    | /                      | Get all                |                           |
-| GET    | /                      | Get all                |                           |
-| POST   | /                      | Get all                |                           |
-| PUT    | /                      | Get all by Id          |                           |
-| DELETE | /                      | Get all by Id          |                           |
-
-######## ?
-Create = Post.
-Read = Get.
-Update = PUT.
-Delete = Delete.
-
-| Method | Url              | Description        | Sample Valid Request Body |
-|--------|------------------|--------------------|---------------------------|
-| GET    | /                | Get all            |                           |
-| GET    | /  | Get all     |                    |
-| POST   | /                | Get all            |                           |
-| PUT    | /                | Get all            |                           |
-| DELETE | /                | Get all            |                           |
+| Method | Url                    | Description | Sample Valid Request Body |
+|--------|------------------------|-------------|---------------------------|
+| GET    | /                      | Get all     |                           |
+| GET    | /                      | Get all     |
+| POST   | /                      | Create      |                           |
+| PUT    | /                      | Update      |                           |
+| DELETE | /                      | Delete      |                           |
 
 
 
