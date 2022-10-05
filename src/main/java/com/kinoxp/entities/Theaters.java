@@ -29,30 +29,4 @@ public enum Theaters {
     public List<Seat> getSeats(){
         return seats;
     }
-
-    public void reserveSeat(int index){
-        seats.get(index).reserveSeat();
-    }
-
-    public static void viewAllSeats(Theaters theater){
-        for (Seat seat : theater.seats){
-            System.out.println(seat);
-        }
-    }
-
-    public static void viewReservedSeats(Theaters theater){
-        for (Seat seat : theater.seats){
-            if (seat.isReserved()){
-                System.out.println(seat);
-            }
-        }
-    }
-
-    public static void viewAvailableSeats(Theaters theater){
-        for (Seat seat : theater.seats){
-            if (!seat.isReserved()){
-                System.out.println(seat);
-            }
-        }
-    }
 }
