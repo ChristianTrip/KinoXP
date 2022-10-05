@@ -1,15 +1,15 @@
 package com.kinoxp.entities;
 
-import javax.persistence.Enumerated;
-
 public enum Genres {
 
-    HORROR,
+    ACTION,
     COMEDY,
+    DRAMA,
+    FANTASY,
+    HORROR,
     ROMANCE,
-    ACTION;
+    MYSTERY,
+    THRILLER,
+    WESTERN;
 
-    public void print(){
-        System.out.println("hello from Genres");
-    }
 }
