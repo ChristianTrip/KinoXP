@@ -1,13 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
   <link href="styles/style.css" type="text/css" rel="stylesheet">
+  <script src="//code.jquery.com/jquery.min.js"></script>
 </head>
+
 <body>
-<h1>KinoXP</h1>
-<h2>The couch potatoes</h2>
-<p>Our first group project on 3. semester</p>
+  <!--Navbar component-->
+  <div id="nav-placeholder">
+  </div>
+
+  <h1>KinoXP</h1>
+  <h2>The couch potatoes</h2>
+  <p>Our first group project on 3. semester</p>
+
+
+
+  <script>
+    $.get("template/navbar.html", function (data) {
+      $("#nav-placeholder").replaceWith(data);
+    });
+  </script>
+
 </body>
+
 </html>

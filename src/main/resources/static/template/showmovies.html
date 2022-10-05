@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="styles/style.css" type="text/css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+</head>
+
+<body>
+    <!--Navbar component-->
+    <div id="nav-placeholder">
+
+    </div>
+
+    <h1>KinoXP</h1>
+    <h2>The couch potatoes</h2>
+    <p>Our first group project on 3. semester</p>
+
+
+    <script>
+        $.get("navbar.html", function (data) {
+            $("#nav-placeholder").replaceWith(data);
+        });
+    </script>
+
+
+</body>
+
+</html>
