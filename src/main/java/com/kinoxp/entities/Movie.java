@@ -12,13 +12,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
+//---------------Lombok.
 @Getter
 @Setter
 @NoArgsConstructor
 @ToString
-@Entity
-public class Movie {
+//---------------Lombok.
 
+@Entity //--Et object som vi skal burger i DB-tabel. Fortæller Der skal laves en table af samme navn some object.
+public class Movie {
+    //---------------Fields / attributter.
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -36,7 +39,9 @@ public class Movie {
     private LocalDateTime created;
     @UpdateTimestamp
     private LocalDateTime edited;
+    //---------------Fields / attributter.
 
+    //---------------Constructor. Vi skal have en fordi vi bruger DTO klasser.
     public Movie(String title, Genres genre, int ageLimit, int productionYear, int runningTime) {
         this.title = title;
         this.genre = genre;
@@ -44,4 +49,5 @@ public class Movie {
         this.productionYear = productionYear;
         this.runningTime = runningTime;
     }
+    //---------------Constructor. Vi skal have en fordi vi bruger DTO klasser.
 }
