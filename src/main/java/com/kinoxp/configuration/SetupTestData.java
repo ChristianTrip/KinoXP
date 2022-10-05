@@ -21,8 +21,9 @@ public class SetupTestData implements ApplicationRunner {
     //private CustomerRepository customerRepository;
     //private ReservationRepository reservationRepository;
 
-    public SetupTestData(MovieRepository movieRepository) {
+    public SetupTestData(MovieRepository movieRepository, ShowRepository showRepository) {
         this.movieRepository = movieRepository;
+        this.showRepository = showRepository;
     }
 
     @Override
