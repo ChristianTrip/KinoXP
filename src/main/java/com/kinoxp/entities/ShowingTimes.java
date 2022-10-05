@@ -13,8 +13,8 @@ public enum ShowingTimes {
     NIGHT;
 
 
-    private LocalDateTime startTime;
+/*    private LocalDateTime startTime;
 
-    private LocalDateTime endTime;
+    private LocalDateTime endTime;*/
 
 }
