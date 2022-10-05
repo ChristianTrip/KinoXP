@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class MovieResponse {
 
-    private Long id;
+    private int id;
     private String title;
     private Genres genre;
     private int ageLimit;
