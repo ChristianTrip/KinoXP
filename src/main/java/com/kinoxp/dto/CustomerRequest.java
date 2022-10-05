@@ -1,10 +1,5 @@
 package com.kinoxp.dto;
 
-public class CustomerRequest {
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.kinoxp.entities.Customer;
 import lombok.Getter;
