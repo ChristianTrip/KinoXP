@@ -3,8 +3,8 @@ package com.kinoxp.dto;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.kinoxp.entities.Movie;
 import com.kinoxp.entities.Show;
-import com.kinoxp.entities.ShowingTimes;
-import com.kinoxp.entities.Theaters;
+import com.kinoxp.entities.ShowingTime;
+import com.kinoxp.entities.Theater;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,8 +18,8 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class ShowRequest {
 
-    private Theaters theater;
-    private ShowingTimes showingTime;
+    private Theater theater;
+    private ShowingTime showingTime;
     private Movie movie;
 
     @JsonFormat(pattern = "dd-MM-yyyy HH:mm:ss",shape = JsonFormat.Shape.STRING)
@@ -31,7 +31,7 @@ public class ShowRequest {
 
     public ShowRequest(Show show){
         this.theater = show.getTheater();
-        this.showingTime = show.getShowingTimes();
+        this.showingTime = show.getShowingTime();
         this.movie = show.getMovie();
         this.created = movie.getCreated();
         this.edited = movie.getEdited();

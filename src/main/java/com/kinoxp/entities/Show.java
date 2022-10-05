@@ -1,6 +1,5 @@
 package com.kinoxp.entities;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -18,16 +17,16 @@ public class Show {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private Theaters theater;
+    private Theater theater;
 
-    private ShowingTimes showingTimes;
+    private ShowingTime showingTime;
 
     @ManyToOne (cascade = CascadeType.ALL)
     private Movie movie;
 
-    public Show(Theaters theater, ShowingTimes showingTimes, Movie movie) {
+    public Show(Theater theater, ShowingTime showingTime, Movie movie) {
         this.theater = theater;
-        this.showingTimes = showingTimes;
+        this.showingTime = showingTime;
         this.movie = movie;
     }
 }

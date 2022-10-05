@@ -2,7 +2,7 @@ package com.kinoxp.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.kinoxp.entities.Genres;
+import com.kinoxp.entities.Genre;
 import com.kinoxp.entities.Movie;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,7 +18,7 @@ public class MovieResponse {
 
     private Long id;
     private String title;
-    private Genres genre;
+    private Genre genre;
     private int ageLimit;
     private int productionYear;
     private int runningTime; // In minuts

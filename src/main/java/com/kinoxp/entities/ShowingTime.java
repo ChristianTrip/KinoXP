@@ -1,10 +1,6 @@
 package com.kinoxp.entities;
 
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
-
-public enum ShowingTimes {
+public enum ShowingTime {
 
     MORNING,
     NOON,

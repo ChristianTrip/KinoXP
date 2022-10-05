@@ -1,9 +1,9 @@
 package com.kinoxp.services;
 
-import com.kinoxp.dto.MovieRequest;
+import com.kinoxp.dto.ShowRequest;
 import com.kinoxp.entities.Movie;
-import com.kinoxp.entities.ShowingTimes;
-import com.kinoxp.entities.Theaters;
+import com.kinoxp.entities.ShowingTime;
+import com.kinoxp.entities.Theater;
 import com.kinoxp.repositories.MovieRepository;
 import com.kinoxp.repositories.ShowRepository;
 import com.kinoxp.dto.ShowResponse;
@@ -26,6 +26,12 @@ public class ShowService {
         this.repository = repository;
     }
 
+    public ShowRequest createShow(Theater theater, ShowingTime showingTime, Movie movie){
+        Movie currentMovie = movRepo.findById(movie.getTitle()).orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Show with this id doesn't exist"));
+        Show show = new Show(theater, showingTime, currentMovie);
+        repository.save(show);
+        return new ShowRequest(show);
+    }
 
     public List<ShowResponse> getAllShows(){
         List<Show> shows = repository.findAll();
@@ -36,23 +42,36 @@ public class ShowService {
         return showResponses;
     }
 
-    public void editTheater(Theaters theater){
-
+    public ShowResponse getSingleShow(int showId){
+        Show show = repository.findById(showId).orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Show with this id doesn't exist"));
+        return new ShowResponse(show, false);
     }
 
-    public void editShowingTime(ShowingTimes showingTime){
-
+    public ShowResponse getSingleShowAdmin(int showId){
+        Show show = repository.findById(showId).orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Show with this id doesn't exist"));
+        return new ShowResponse(show, true);
     }
 
-    public void editMovie(MovieRequest body, String title){
-        Movie movie = movRepo.findById(title).orElseThrow(()->  new ResponseStatusException(HttpStatus.BAD_REQUEST,"Movie not found"));
-        /*
-        if(!body.getTitle().equals(title)){
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Cannot change movie");
-        }
-         */
+    public void editTheater(ShowRequest showRequest, int showId){
+        Show show = repository.findById(showId).orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Show with this id doesn't exist"));
+        show.setTheater(showRequest.getTheater());
+        repository.save(show);
+    }
 
+    public void editShowingTime(ShowRequest showRequest, int showId){
+        Show show = repository.findById(showId).orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Show with this id doesn't exist"));
+        show.setShowingTime(showRequest.getShowingTime());
+        repository.save(show);
+    }
 
+    public void editMovie(ShowRequest showRequest, int showId){
+        Show show = repository.findById(showId).orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Show with this id doesn't exist"));
+        show.setMovie(showRequest.getMovie());
+        repository.save(show);
+    }
+
+    public void deleteShow(int showId){
+        repository.deleteById(showId);
     }
 
 }

@@ -1,6 +1,6 @@
 package com.kinoxp.entities;
 
-public enum Genres {
+public enum Genre {
 
     ACTION,
     COMEDY,

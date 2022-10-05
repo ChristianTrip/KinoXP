@@ -16,8 +16,8 @@ import java.time.LocalDateTime;
 public class ShowResponse {
 
     private int id;
-    private Theaters theater;
-    private ShowingTimes showingTime;
+    private Theater theater;
+    private ShowingTime showingTime;
     private Movie movie;
 
 
@@ -30,7 +30,7 @@ public class ShowResponse {
     public ShowResponse(Show show, boolean includeAll){
         this.id = show.getId();
         this.theater = show.getTheater();
-        this.showingTime = show.getShowingTimes();
+        this.showingTime = show.getShowingTime();
         this.movie = show.getMovie();
         if(includeAll){
             this.created = movie.getCreated();

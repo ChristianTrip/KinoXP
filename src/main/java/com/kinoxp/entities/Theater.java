@@ -3,7 +3,7 @@ package com.kinoxp.entities;
 import java.util.ArrayList;
 import java.util.List;
 
-public enum Theaters {
+public enum Theater {
 
     SMALL_THEATER (20, 12),
     BIG_THEATER(25, 16);
@@ -12,7 +12,7 @@ public enum Theaters {
     private int rows;
     private int numbersInRow;
 
-    private Theaters(int rows, int numbersInRow){
+    private Theater(int rows, int numbersInRow){
         this.rows = rows;
         setupSeats(rows, numbersInRow);
     }
@@ -34,13 +34,13 @@ public enum Theaters {
         seats.get(index).reserveSeat();
     }
 
-    public static void viewAllSeats(Theaters theater){
+    public static void viewAllSeats(Theater theater){
         for (Seat seat : theater.seats){
             System.out.println(seat);
         }
     }
 
-    public static void viewReservedSeats(Theaters theater){
+    public static void viewReservedSeats(Theater theater){
         for (Seat seat : theater.seats){
             if (seat.isReserved()){
                 System.out.println(seat);
@@ -48,7 +48,7 @@ public enum Theaters {
         }
     }
 
-    public static void viewAvailableSeats(Theaters theater){
+    public static void viewAvailableSeats(Theater theater){
         for (Seat seat : theater.seats){
             if (!seat.isReserved()){
                 System.out.println(seat);
