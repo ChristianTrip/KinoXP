@@ -1,6 +1,5 @@
 package com.kinoxp.dto;
 
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.kinoxp.entities.Customer;
 import lombok.Getter;
@@ -15,7 +14,7 @@ import lombok.Setter;
 //---------------Lombok.
 
 public class CustomerRequest {
-    //---------------Fields / attributter.
+  
     private int id;
 
     private String name;
@@ -23,9 +22,7 @@ public class CustomerRequest {
     private String phone;
 
     private String email;
-    //---------------Fields / attributter.
-
-    //---------------Constructor.
+  
     //TODO how do this work
     public static Customer getCustomerEntity(CustomerRequest cRequest){
         return new Customer();
@@ -37,5 +34,5 @@ public class CustomerRequest {
         this.phone = cRequest.getPhone();
         this.email = cRequest.getEmail();
     }
-    //---------------Constructor.
+  
 }

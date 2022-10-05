@@ -2,8 +2,7 @@ package com.kinoxp.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.kinoxp.entities.Genre;
-import com.kinoxp.entities.Movie;
+import com.kinoxp.entities.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -14,14 +13,13 @@ import java.time.LocalDateTime;
 @Setter
 @NoArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class MovieResponse {
+public class ShowResponse {
 
-    private Long id;
-    private String title;
-    private Genre genre;
-    private int ageLimit;
-    private int productionYear;
-    private int runningTime; // In minuts
+    private int id;
+    private Theater theater;
+    private ShowingTime showingTime;
+    private Movie movie;
+
 
     @JsonFormat(pattern = "dd-MM-yyyy HH:mm:ss",shape = JsonFormat.Shape.STRING)
     private LocalDateTime created;
@@ -29,13 +27,11 @@ public class MovieResponse {
     @JsonFormat(pattern = "dd-MM-yyyy HH:mm:ss",shape = JsonFormat.Shape.STRING)
     private LocalDateTime edited;
 
-    public MovieResponse(Movie movie, boolean includeAll){
-        this.id = movie.getId();
-        this.title = movie.getTitle();
-        this.genre = movie.getGenre();
-        this.ageLimit = movie.getAgeLimit();
-        this.productionYear = movie.getProductionYear();
-        this.runningTime = movie.getRunningTime();
+    public ShowResponse(Show show, boolean includeAll){
+        this.id = show.getId();
+        this.theater = show.getTheater();
+        this.showingTime = show.getShowingTime();
+        this.movie = show.getMovie();
         if(includeAll){
             this.created = movie.getCreated();
             this.edited = movie.getEdited();

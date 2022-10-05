@@ -28,7 +28,7 @@ public class Movie {
     @Column(name = "title", nullable = false)
     private String title;
     @Column(name = "genre", nullable = false)
-    private Genres genre;
+    private Genre genre;
     @Column(name = "age_limit", nullable = false)
     private int ageLimit;
     @Column(name = "production_year", nullable = false)
@@ -41,8 +41,9 @@ public class Movie {
     private LocalDateTime edited;
     //---------------Fields / attributter.
 
-    //---------------Constructor. Vi skal have en fordi vi bruger DTO klasser.
-    public Movie(String title, Genres genre, int ageLimit, int productionYear, int runningTime) {
+
+    public Movie(String title, Genre genre, int ageLimit, int productionYear, int runningTime) {
+
         this.title = title;
         this.genre = genre;
         this.ageLimit = ageLimit;

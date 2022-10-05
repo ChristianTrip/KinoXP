@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/movies")
+@RequestMapping("/movies")
 @CrossOrigin //giver adgang til at andre servere kan hente data herfra
 public class MovieController {
 
