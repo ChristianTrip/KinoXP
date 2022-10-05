@@ -2,7 +2,10 @@ package com.kinoxp.configuration;
 
 import com.kinoxp.entities.Genres;
 import com.kinoxp.entities.Movie;
+import com.kinoxp.repositories.CustomerRepository;
 import com.kinoxp.repositories.MovieRepository;
+import com.kinoxp.repositories.ReservationRepository;
+import com.kinoxp.repositories.ShowRepository;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Controller;
@@ -13,9 +16,14 @@ import java.time.LocalDate;
 public class SetupTestData implements ApplicationRunner {
 
     private MovieRepository movieRepository;
+    private ShowRepository showRepository;
 
-    public SetupTestData(MovieRepository movieRepository) {
+    //private CustomerRepository customerRepository;
+    //private ReservationRepository reservationRepository;
+
+    public SetupTestData(MovieRepository movieRepository, ShowRepository showRepository) {
         this.movieRepository = movieRepository;
+        this.showRepository = showRepository;
     }
 
     @Override
