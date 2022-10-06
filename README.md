@@ -64,3 +64,51 @@ Delete = Delete.
 
 
 
+The Couch Potatoes - Gruppekontrakt
+KinoXP
+Medlemmer:
+
+Andreas Hjort - andreas.hjort28@gmail.com - 20876707
+Robert Witt Hansen -  funky.junky.mails.goes.to.jail@gmail.com - 60829282
+Jacob Vermehren - jacobuhlig@gmail.com - 22997992
+Theis Aslak Langelo - theislangelo@gmail.com - 53767668
+Christian Sandholdt Trip - christianstrip@gmail.com - 61340812
+
+
+Scrum master: Jacob
+
+
+Dage til fremmøde: F: Fysisk - T: Teams
+
+Uge 40:
+
+Mandag - 08:00 - 12.00	  F
+Tirsdag - 12.30 - 16.00   F
+Onsdag - 08:00 - 12.00	  F
+Torsdag - 12.30 - 16.00   T
+Fredag - 08:00 - 12.00	  F
+
+Uge 41: 
+
+Mandag - 08:00 - 12.00	  T
+Tirsdag - 12.30 - 16.00   F
+Onsdag - 08:00 - 12.00	  T
+Torsdag - 12.30 - 16.00   F
+Fredag - 08:00 - 12.00	  T
+
+
+Gruppe discipline: 
+-	Hvis man kommer forsent informerer man gruppen.
+-	Arbejder starter seneste 10 min efter mødepligt.
+-	Daily scrum meeting
+-	Opdater Scrum board
+-	Opstår der uenigheder imellem gruppemedlemmer, så tages det op til fællesmøde.
+
+
+Environment: 
+Teams
+Skole
+
+
+Github - Branching:
+(Pull request) hvor vi arbjeder på funktionsbaserede branches der slettes efter de er blevet revideret af et andet teammedlem og derigennem tilsluttet sig til main branchen.
