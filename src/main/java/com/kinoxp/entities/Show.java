@@ -1,30 +1,34 @@
 package com.kinoxp.entities;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Getter
 @Setter
 @NoArgsConstructor
-//@AllArgsConstructor
+@Builder
 @Entity
+@Table(name="shows")
 public class Show {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
+    @Column(name="theater", nullable = false)
     private Theater theater;
 
+    @Column(name="showing_time", nullable = false)
     private ShowingTime showingTime;
 
     @ManyToOne (cascade = CascadeType.ALL)
-    private Movie movie;
+    Movie movie;
 
-    public Show(Theater theater, ShowingTime showingTime, Movie movie) {
+
+
+    public Show(Long id, Theater theater, ShowingTime showingTime, Movie movie) {
+        this.id = id;
         this.theater = theater;
         this.showingTime = showingTime;
         this.movie = movie;
