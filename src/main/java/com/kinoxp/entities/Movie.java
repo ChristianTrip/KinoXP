@@ -42,14 +42,6 @@ public class Movie {
     private LocalDateTime edited;
     //---------------Fields / attributter.
 
-    @OneToMany(mappedBy = "movie", fetch = FetchType.LAZY)
-    List<Show> shows = new ArrayList<>();
-
-    public void addMovie(Show show){
-        shows.add(show);
-        //reservation.setMovie(this);
-    }
-
 
     public Movie(String title, Genre genre, int ageLimit, int productionYear, int runningTime) {
 
