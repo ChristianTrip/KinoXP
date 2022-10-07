@@ -7,7 +7,6 @@ import javax.persistence.*;
 @Getter
 @Setter
 @NoArgsConstructor
-@Builder
 @Entity
 @Table(name="shows")
 public class Show {
@@ -27,8 +26,7 @@ public class Show {
 
 
 
-    public Show(Long id, Theater theater, ShowingTime showingTime, Movie movie) {
-        this.id = id;
+    public Show(Theater theater, ShowingTime showingTime, Movie movie) {
         this.theater = theater;
         this.showingTime = showingTime;
         this.movie = movie;

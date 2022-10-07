@@ -27,14 +27,12 @@ public class ShowResponse {
     @JsonFormat(pattern = "dd-MM-yyyy HH:mm:ss",shape = JsonFormat.Shape.STRING)
     private LocalDateTime edited;
 
-    public ShowResponse(Show show, boolean includeAll){
+    public ShowResponse(Show show){
         this.id = show.getId();
         this.theater = show.getTheater();
         this.showingTime = show.getShowingTime();
         this.movie = show.getMovie();
-        if(includeAll){
-            this.created = movie.getCreated();
-            this.edited = movie.getEdited();
-        }
+        this.created = movie.getCreated();
+        this.edited = movie.getEdited();
     }
 }

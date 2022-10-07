@@ -26,30 +26,25 @@ public class ShowService {
         this.repository = repository;
     }
 
-    public ShowRequest createShow(Long id,Theater theater, ShowingTime showingTime, Movie movie){
+    public ShowResponse createShow(Theater theater, ShowingTime showingTime, Movie movie){
         Movie currentMovie = movRepo.findById(movie.getTitle()).orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Show with this id doesn't exist"));
-        Show show = new Show(id, theater, showingTime, currentMovie);
+        Show show = new Show(theater, showingTime, currentMovie);
         repository.save(show);
-        return new ShowRequest(show);
+        return new ShowResponse(show);
     }
 
     public List<ShowResponse> getAllShows(){
         List<Show> shows = repository.findAll();
         List<ShowResponse> showResponses = shows
                 .stream()
-                .map(show -> new ShowResponse(show, true))
+                .map(show -> new ShowResponse(show))
                 .collect(Collectors.toList());
         return showResponses;
     }
 
     public ShowResponse getSingleShow(int showId){
         Show show = repository.findById(showId).orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Show with this id doesn't exist"));
-        return new ShowResponse(show, false);
-    }
-
-    public ShowResponse getSingleShowAdmin(int showId){
-        Show show = repository.findById(showId).orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Show with this id doesn't exist"));
-        return new ShowResponse(show, true);
+        return new ShowResponse(show);
     }
 
     public void editTheater(ShowRequest showRequest, int showId){
