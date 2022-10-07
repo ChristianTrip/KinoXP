@@ -20,9 +20,10 @@ public class MovieController {
         this.service = service;
     }
 
-    @GetMapping("/all")
+    @GetMapping("")
     public List<MovieResponse> getAllMovies(){
         return service.getAllMovies();
     }
 
 }
+

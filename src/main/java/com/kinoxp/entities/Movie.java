@@ -1,9 +1,6 @@
 package com.kinoxp.entities;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -11,11 +8,15 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 //---------------Lombok.
 @Getter
 @Setter
 @NoArgsConstructor
+@EqualsAndHashCode
+@AllArgsConstructor
 @ToString
 //---------------Lombok.
 

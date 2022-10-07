@@ -26,9 +26,9 @@ public class ShowService {
         this.repository = repository;
     }
 
-    public ShowRequest createShow(Theater theater, ShowingTime showingTime, Movie movie){
+    public ShowRequest createShow(Long id,Theater theater, ShowingTime showingTime, Movie movie){
         Movie currentMovie = movRepo.findById(movie.getTitle()).orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Show with this id doesn't exist"));
-        Show show = new Show(theater, showingTime, currentMovie);
+        Show show = new Show(id, theater, showingTime, currentMovie);
         repository.save(show);
         return new ShowRequest(show);
     }

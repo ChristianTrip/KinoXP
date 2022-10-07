@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ShowResponse {
 
-    private int id;
+    private Long id;
     private Theater theater;
     private ShowingTime showingTime;
     private Movie movie;

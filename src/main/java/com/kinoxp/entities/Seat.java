@@ -1,6 +1,8 @@
 package com.kinoxp.entities;
 
+
 public class Seat {
+
 
     private int id;
     private boolean reserved = false;
