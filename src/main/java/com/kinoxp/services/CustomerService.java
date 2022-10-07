@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 
@@ -49,6 +50,14 @@ public class CustomerService {
     }
 
     public CustomerResponse getCustomer() {
+        return null;
+    }
+
+    public Optional<CustomerResponse> findByEmail(String email) {
+        return null;
+    }
+
+    public CustomerResponse save(CustomerService customerService) {
         return null;
     }
 }
