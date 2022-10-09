@@ -1,6 +1,7 @@
 package com.kinoxp.api;
 
 
+import com.kinoxp.dto.CustomerRequest;
 import com.kinoxp.dto.CustomerResponse;
 import com.kinoxp.services.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,32 +16,30 @@ import java.util.Optional;
 
 @RequestMapping("/customers")
 public class CustomerController {
-
     @Autowired
     CustomerService customerService;
 
-    @GetMapping()
-    public List<CustomerResponse> getCustomers(){
-        return customerService.getCustomers();
+    @GetMapping() //--GET LIST OF ALL CUSTOMERS.
+    public List<CustomerResponse> getAllCustomers(){
+        return customerService.getAllCustomers();
     }
 
     //TODO er lidt usikker om det er skrevet rigtigt.
-    @GetMapping(path = "/{email}")
-    public CustomerResponse getCustomer(@PathVariable String email){
-        Optional<CustomerResponse> customerResponse = customerService.findByEmail(email);
-        if(customerResponse.isPresent()){
-            return customerResponse.get();
-        }else {
-            return null;
-        }
+    @GetMapping("/{email}") //--GET A SINGLE CUSTOMER BY EMAIL
+    public CustomerResponse getCustomerByEmail(@PathVariable String email){
+        return customerService.getCustomerByEmail(email);
     }
 
     //TODO Service er ikke lavet.
-    @PostMapping("")
+    @PostMapping("") //-- CREATE.
     @ResponseStatus(HttpStatus.CREATED)
-    public CustomerResponse createCustomer(@RequestBody CustomerResponse customerResponse){
-        System.out.println(customerResponse.getEmail() + customerResponse.getPhone());
-        return customerService.save(customerService);
+    public CustomerResponse createCustomer(@RequestBody CustomerRequest customerRequest){
+        return customerService.createCustomer(customerRequest);
     }
+
+
+
+
+
 
 }

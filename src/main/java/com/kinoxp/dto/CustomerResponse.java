@@ -31,10 +31,10 @@ public class CustomerResponse {
 
     //---------------Constructor. Vi skal have en fordi vi bruger DTO klasser.
     public CustomerResponse(Customer customer, boolean includeAll ) {
-        this.id = id;
-        this.name = name;
-        this.phone = phone;
-        this.email = email;
+        this.id = customer.getId();
+        this.name = customer.getName();
+        this.phone = customer.getPhone();
+        this.email = customer.getEmail();
         if(includeAll){
             this.created = customer.getCreated();
             this.edited = customer.getEdited();

@@ -21,46 +21,33 @@ public class CustomerService {
     public CustomerService(CustomerRepository customerRepository) {
         this.customerRepository = customerRepository;
     }
-    public List<CustomerResponse> getCustomers() {
-        //List<Customer> customers = customerRepository.findAll();
+
+    public List<CustomerResponse> getAllCustomers() {
         return customerRepository.findAll()
                 .stream()
                 .map(customer -> new CustomerResponse(customer,false))
                 .collect(Collectors.toList());
-        /*
-        List<CustomerResponse> customerResponses = new ArrayList<>()
-        for (int i = 0; i < customers.size(); i++) {
-            cus.add(new CustomerResponse(customers.get(i),false));
-        }
-         */
     }
 
-    //TODO de 2 metoder kan jeg ikke få til at fungerer.
-    public CustomerResponse getCustomer(CustomerRequest customerRequest) {
-        if(customerRepository.existsByEmail(customerRequest.getEmail())){
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Customer with this ID already exist");
-        }
-        if(customerRepository.existsByEmail(customerRequest.getEmail())){
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Customer with this Email already exist");
-        }
-        Customer newCustomer = CustomerRequest.getCustomerEntity(customerRequest);
-        newCustomer = customerRepository.save(new Customer());
+    public CustomerResponse getCustomerByEmail(String email) {
+        Optional<Customer> customer = customerRepository.findByEmail(email);
+       if(customer.isPresent()){
+           System.out.println(customer.get().getEmail());
+           return new CustomerResponse(customer.get(), false);
+       }
+       return null;
+       }
 
-        return new CustomerResponse(newCustomer, false);
-    }
+    public CustomerResponse createCustomer(CustomerRequest customerRequest) {
+        Customer customer = new Customer(customerRequest.getName(), customerRequest.getPhone(), customerRequest.getEmail());
+        Customer customerDb = customerRepository.save(customer);
+        CustomerResponse customerResponse = new CustomerResponse(customerDb, false);
+        return customerResponse;
 
-    public CustomerResponse getCustomer() {
-        return null;
-    }
 
-    public Optional<CustomerResponse> findByEmail(String email) {
-        return null;
-    }
-
-    public CustomerResponse save(CustomerService customerService) {
-        return null;
     }
 }
+
 
 
 
@@ -90,3 +77,19 @@ public class CustomerService {
         return customerResponses;
     }
  */
+
+/*
+TODO getAllCustomers() Disse 2 måder kan også bruges.
+List<Customer> customers = customerRepository.findAll();
+
+List<CustomerResponse> customerResponses = new ArrayList<>()
+for (int i = 0; i < customers.size(); i++) {
+cus.add(new CustomerResponse(customers.get(i),false));
+}
+TODO  createCustomer() Denne måder kan også bruges.
+return new CustomerResponse(customerRepository
+.save(new Customer(customerRequest.getName(), customerRequest.getPhone(), customerRequest.getEmail())), false);
+
+
+
+*/
