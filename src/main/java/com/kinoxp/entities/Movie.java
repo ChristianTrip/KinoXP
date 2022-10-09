@@ -4,12 +4,8 @@ import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
 //---------------Lombok.
 @Getter
@@ -19,6 +15,7 @@ import java.util.List;
 @AllArgsConstructor
 @ToString
 //---------------Lombok.
+@Builder
 
 @Entity //--Et object som vi skal burger i DB-tabel. Fortæller Der skal laves en table af samme navn some object.
 public class Movie {

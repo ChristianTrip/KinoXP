@@ -28,6 +28,19 @@ public class MovieRequest {
     @JsonFormat(pattern = "dd-MM-yyyy HH:mm:ss",shape = JsonFormat.Shape.STRING)
     private LocalDateTime edited;
 
+    public static Movie getMovieEntity(MovieRequest mr){
+        return Movie.builder()
+                .title(mr.title)
+                .genre(mr.genre)
+                .ageLimit(mr.ageLimit)
+                .productionYear(mr.productionYear)
+                .runningTime(mr.runningTime)
+                .title(mr.title)
+                .created(mr.created)
+                .edited(mr.edited)
+                .build();
+    }
+
     public MovieRequest(Movie movie){
         this.title = movie.getTitle();
         this.genre = movie.getGenre();

@@ -22,15 +22,16 @@ public class ShowService {
 
     private MovieRepository movRepo; // --må  man godt det her?
 
-    public ShowService(ShowRepository repository){
+
+    public ShowService(ShowRepository repository, MovieRepository movRepo){
         this.repository = repository;
+        this.movRepo = movRepo;
     }
 
-    public ShowResponse createShow(Theater theater, ShowingTime showingTime, Movie movie){
-        Movie currentMovie = movRepo.findById(movie.getTitle()).orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Show with this id doesn't exist"));
+    public void createShow(Theater theater, ShowingTime showingTime, Long movie){
+        Movie currentMovie = movRepo.findById(movie).orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Show with this id doesn't exist"));
         Show show = new Show(theater, showingTime, currentMovie);
         repository.save(show);
-        return new ShowResponse(show);
     }
 
     public List<ShowResponse> getAllShows(){
@@ -59,11 +60,12 @@ public class ShowService {
         repository.save(show);
     }
 
-    public void editMovie(ShowRequest showRequest, int showId){
+   /** public void editMovie(ShowRequest showRequest, int showId){
         Show show = repository.findById(showId).orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Show with this id doesn't exist"));
         show.setMovie(showRequest.getMovie());
         repository.save(show);
     }
+    **/
 
     public void deleteShow(int showId){
         repository.deleteById(showId);

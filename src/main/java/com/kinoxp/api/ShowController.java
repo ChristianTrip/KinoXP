@@ -29,10 +29,12 @@ public class ShowController {
     }
 
     @PostMapping
-    public ShowResponse createShow(@RequestBody ShowRequest body){
-        return service.createShow(body.getTheater(), body.getShowingTime(), body.getMovie());
+    public void createShow(@RequestBody ShowRequest body){
+        service.createShow(body.getTheater(), body.getShowingTime(), body.getMovieID());
     }
 
+
+    /**
     @PutMapping("/show/{showId}/{theater}/{showingTime}/{movie}")
     public void editShow(@RequestBody ShowRequest body, @PathVariable int showId) {
         service.editTheater(body, showId);
@@ -60,5 +62,5 @@ public class ShowController {
         service.deleteShow(showId);
     }
 
-
+**/
 }
