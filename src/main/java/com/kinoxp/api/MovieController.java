@@ -1,11 +1,9 @@
 package com.kinoxp.api;
 
+import com.kinoxp.dto.MovieRequest;
 import com.kinoxp.dto.MovieResponse;
 import com.kinoxp.services.MovieService;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,6 +21,11 @@ public class MovieController {
     @GetMapping("")
     public List<MovieResponse> getAllMovies(){
         return service.getAllMovies();
+    }
+
+    @PostMapping
+    public MovieResponse addMovie(@RequestBody MovieRequest body){
+        return service.addMovie(body);
     }
 
 }

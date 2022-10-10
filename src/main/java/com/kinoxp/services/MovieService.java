@@ -1,5 +1,6 @@
 package com.kinoxp.services;
 
+import com.kinoxp.dto.MovieRequest;
 import com.kinoxp.dto.MovieResponse;
 import com.kinoxp.entities.Movie;
 import com.kinoxp.repositories.MovieRepository;
@@ -21,8 +22,15 @@ public class MovieService {
         List<Movie> movies = repository.findAll();
         List<MovieResponse> movieResponses = movies
                         .stream()
-                        .map(movie -> new MovieResponse(movie, true))
+                        .map(movie -> new MovieResponse(movie))
                         .collect(Collectors.toList());
         return movieResponses;
+    }
+
+    public MovieResponse addMovie(MovieRequest movie){
+        Movie newMovie = MovieRequest.getMovieEntity(movie);
+        newMovie = repository.save(newMovie);
+        return new MovieResponse(newMovie);
+
     }
 }
