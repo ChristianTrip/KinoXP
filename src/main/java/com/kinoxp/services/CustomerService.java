@@ -43,14 +43,17 @@ public class CustomerService {
         Customer customerDb = customerRepository.save(customer);
         CustomerResponse customerResponse = new CustomerResponse(customerDb, false);
         return customerResponse;
+    }
 
 
+    //TODO er ikke tested i Postman i nu.
+    public CustomerResponse editCustomer(CustomerRequest customerRequest) {
+        Customer customer = new Customer(customerRequest.getName(),customerRequest.getPhone(),customerRequest.getEmail());
+        Customer customerOb = customerRepository.save(customer);
+        CustomerResponse customerResponse = new CustomerResponse(customerOb, false);
+        return customerResponse;
     }
 }
-
-
-
-
 
 
 /*
@@ -89,7 +92,5 @@ cus.add(new CustomerResponse(customers.get(i),false));
 TODO  createCustomer() Denne måder kan også bruges.
 return new CustomerResponse(customerRepository
 .save(new Customer(customerRequest.getName(), customerRequest.getPhone(), customerRequest.getEmail())), false);
-
-
 
 */
