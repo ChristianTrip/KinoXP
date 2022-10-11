@@ -12,6 +12,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -28,9 +30,9 @@ public class ShowService {
         this.movRepo = movRepo;
     }
 
-    public void createShow(Theater theater, ShowingTime showingTime, Long movieId){
+    public void createShow(Theater theater, ShowingTime showingTime, Long movieId, LocalDate date){
         Movie currentMovie = movRepo.findById(movieId).orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Show with this id doesn't exist"));
-        Show show = new Show(theater, showingTime, currentMovie);
+        Show show = new Show(theater, showingTime, currentMovie, date);
         repository.save(show);
     }
 
