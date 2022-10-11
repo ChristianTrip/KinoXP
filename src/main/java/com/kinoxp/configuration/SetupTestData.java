@@ -36,8 +36,8 @@ public class SetupTestData implements ApplicationRunner {
         Movie movie1 = new Movie("First Blood", Genre.ACTION, 16, 1982, 93);
         Movie movie2 = new Movie("Rambo: First Blood 2", Genre.ACTION, 16, 1985, 95);
 
-        movieRepository.save(movie1);
-        movieRepository.save(movie2);
+        //movieRepository.save(movie1);
+        //movieRepository.save(movie2);
 
     }
 
