@@ -72,4 +72,12 @@ public class Customer {
         this.edited = edited;
     }
     //---------------Constructor.
+
+    //---------------Constructor.
+    public Customer(String name, String phone, String email) {
+        this.name = name;
+        this.phone = phone;
+        this.email = email;
+    }
+    //---------------Constructor.
 }

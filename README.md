@@ -38,13 +38,13 @@ Read = Get.
 Update = PUT.
 Delete = Delete.
 
-| Method | Url                      | Description | Sample Valid Request Body |
-|--------|--------------------------|-------------|---------------------------|
-| GET    | /Customer                | Get all     |                           |
-| GET    | /Customer  {Customer Id} | Get all     |                           |
-| POST   | /Customer                | Create      |                           |
-| PUT    | /Customer                | Update      |                           |
-| DELETE | /Customer                | Detete      |                           |
+| Method | Url                        | Description | Sample Valid Request Body |
+|--------|----------------------------|-------------|---------------------------|
+| GET    | /Customers                 | Get all     |                           |
+| GET    | /Customers/{CustomerEmail} | Get all     |                           |
+| POST   | /Customer                  | Create      |                           |
+| PUT    | /Customer/{CustomerEmail}  | Update      |                           |
+| DELETE | /Customer/{CustomerEmail}  | Detete      |                           |
 
 
 ####### Reservation 

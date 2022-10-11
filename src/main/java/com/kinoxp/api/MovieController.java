@@ -23,6 +23,7 @@ public class MovieController {
         return service.getAllMovies();
     }
 
+
     @PostMapping
     public MovieResponse addMovie(@RequestBody MovieRequest body){
         return service.addMovie(body);
