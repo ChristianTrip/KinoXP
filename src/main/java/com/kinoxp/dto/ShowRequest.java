@@ -12,7 +12,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ShowRequest {
+public class  ShowRequest {
 
     private Theater theater;
     private ShowingTime showingTime;

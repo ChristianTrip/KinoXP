@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/shows")
-@CrossOrigin //giver adgang til at andre servere kan hente data herfra
+@CrossOrigin
 public class ShowController {
 
     private ShowService service;
@@ -24,7 +24,7 @@ public class ShowController {
     }
 
     @GetMapping(path = "/{showId}")
-    public ShowResponse getSingleMovie(@PathVariable int showId){
+    public ShowResponse getSingleMovie(@PathVariable Long showId){
         return service.getSingleShow(showId);
     }
 
@@ -33,34 +33,32 @@ public class ShowController {
         service.createShow(body.getTheater(), body.getShowingTime(), body.getMovieID());
     }
 
-
-    /**
-    @PutMapping("/show/{showId}/{theater}/{showingTime}/{movie}")
-    public void editShow(@RequestBody ShowRequest body, @PathVariable int showId) {
+    @PutMapping("/{showId}/{theater}/{showingTime}/{movieID}")
+    public void editShow(@RequestBody ShowRequest body, @PathVariable Long showId) {
         service.editTheater(body, showId);
         service.editShowingTime(body, showId);
         service.editMovie(body, showId);
     }
 
     @PatchMapping("/theater/{showId}/{theater}")
-    public void editTheater(@RequestBody ShowRequest body, @PathVariable int showId) {
+    public void editTheater(@RequestBody ShowRequest body, @PathVariable Long showId) {
         service.editTheater(body, showId);
     }
 
     @PatchMapping("/showing-time/{showId}/{showingTime}")
-    public void editShowingTime(@RequestBody ShowRequest body, @PathVariable int showId) {
+    public void editShowingTime(@RequestBody ShowRequest body, @PathVariable Long showId) {
         service.editShowingTime(body, showId);
     }
 
     @PatchMapping("/movie/{showId}/{movie}")
-    public void editMovie(@RequestBody ShowRequest body, @PathVariable int showId) {
+    public void editMovie(@RequestBody ShowRequest body, @PathVariable Long showId) {
         service.editMovie(body, showId);
     }
 
     @DeleteMapping("/{showId}")
-    public void deleteShow(@PathVariable int showId) {
+    public void deleteShow(@PathVariable Long showId) {
         service.deleteShow(showId);
     }
 
-**/
+
 }
