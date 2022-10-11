@@ -22,34 +22,30 @@ public class ShowService {
 
     private MovieRepository movRepo; // --må  man godt det her?
 
-    public ShowService(ShowRepository repository){
+
+    public ShowService(ShowRepository repository, MovieRepository movRepo){
         this.repository = repository;
+        this.movRepo = movRepo;
     }
 
-    public ShowRequest createShow(Long id,Theater theater, ShowingTime showingTime, Movie movie){
-        Movie currentMovie = movRepo.findById(movie.getTitle()).orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Show with this id doesn't exist"));
-        Show show = new Show(id, theater, showingTime, currentMovie);
+    public void createShow(Theater theater, ShowingTime showingTime, Long movie){
+        Movie currentMovie = movRepo.findById(movie).orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Show with this id doesn't exist"));
+        Show show = new Show(theater, showingTime, currentMovie);
         repository.save(show);
-        return new ShowRequest(show);
     }
 
     public List<ShowResponse> getAllShows(){
         List<Show> shows = repository.findAll();
         List<ShowResponse> showResponses = shows
                 .stream()
-                .map(show -> new ShowResponse(show, true))
+                .map(show -> new ShowResponse(show))
                 .collect(Collectors.toList());
         return showResponses;
     }
 
     public ShowResponse getSingleShow(int showId){
         Show show = repository.findById(showId).orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Show with this id doesn't exist"));
-        return new ShowResponse(show, false);
-    }
-
-    public ShowResponse getSingleShowAdmin(int showId){
-        Show show = repository.findById(showId).orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Show with this id doesn't exist"));
-        return new ShowResponse(show, true);
+        return new ShowResponse(show);
     }
 
     public void editTheater(ShowRequest showRequest, int showId){
@@ -64,11 +60,12 @@ public class ShowService {
         repository.save(show);
     }
 
-    public void editMovie(ShowRequest showRequest, int showId){
+   /** public void editMovie(ShowRequest showRequest, int showId){
         Show show = repository.findById(showId).orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Show with this id doesn't exist"));
         show.setMovie(showRequest.getMovie());
         repository.save(show);
     }
+    **/
 
     public void deleteShow(int showId){
         repository.deleteById(showId);

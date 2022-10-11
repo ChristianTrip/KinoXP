@@ -29,16 +29,14 @@ public class MovieResponse {
     @JsonFormat(pattern = "dd-MM-yyyy HH:mm:ss",shape = JsonFormat.Shape.STRING)
     private LocalDateTime edited;
 
-    public MovieResponse(Movie movie, boolean includeAll){
+    public MovieResponse(Movie movie){
         this.id = movie.getId();
         this.title = movie.getTitle();
         this.genre = movie.getGenre();
         this.ageLimit = movie.getAgeLimit();
         this.productionYear = movie.getProductionYear();
         this.runningTime = movie.getRunningTime();
-        if(includeAll){
-            this.created = movie.getCreated();
-            this.edited = movie.getEdited();
-        }
+        this.created = movie.getCreated();
+        this.edited = movie.getEdited();
     }
 }
