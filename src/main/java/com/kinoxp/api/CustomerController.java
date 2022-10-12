@@ -11,12 +11,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
+// Controller er mellemled mellem front-end og service.
 @RestController
 @CrossOrigin
 
 @RequestMapping("/customers")
 public class CustomerController {
-    @Autowired
+    @Autowired //Laver en instans. Søger for kendskab til Customerservice
     CustomerService customerService;
 
     @GetMapping() //GET the List of Customers. (READ) (User).
@@ -26,8 +27,8 @@ public class CustomerController {
 
     //TODO er lidt usikker om det er skrevet rigtigt.
     @GetMapping("/{email}") //get a customer by by /1 (READ) (User).
-    public CustomerResponse getCustomerByEmail(@PathVariable String email){
-        return customerService.getCustomerByEmail(email);
+    public CustomerResponse getCustomer(@PathVariable String email){
+        return customerService.getCustomer(email);
     }
 
     //TODO Service er ikke lavet.
@@ -38,8 +39,13 @@ public class CustomerController {
     }
 
     @PutMapping("/{email}") //UPDATE a Customer by email (UPDATE/EDIT)(User).
-    public CustomerResponse editCustomer(@RequestBody CustomerRequest customerRequest, @PathVariable String email){
-        return customerService.editCustomer(customerRequest);
+    public CustomerResponse editCustomerByEmail(@RequestBody CustomerRequest customerRequest, @PathVariable String email){
+        return customerService.editCustomerByEmail(customerRequest);
+    }
+
+    @DeleteMapping("/{email}")
+    public CustomerResponse deleteCustomerByEmail(@RequestBody CustomerRequest customerRequest, @PathVariable String email){
+        return customerService.deleteCustomerByEmail(customerRequest);
     }
 
 
