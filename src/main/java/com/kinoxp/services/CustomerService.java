@@ -29,7 +29,7 @@ public class CustomerService {
                 .collect(Collectors.toList());
     }
 
-    public CustomerResponse getCustomerByEmail(String email) {
+    public CustomerResponse getCustomer(String email) {
         Optional<Customer> customer = customerRepository.findByEmail(email);
        if(customer.isPresent()){
            System.out.println(customer.get().getEmail());
@@ -47,13 +47,22 @@ public class CustomerService {
 
 
     //TODO er ikke tested i Postman i nu.
-    public CustomerResponse editCustomer(CustomerRequest customerRequest) {
+    public CustomerResponse editCustomerByEmail(CustomerRequest customerRequest) {
         Customer customer = new Customer(customerRequest.getName(),customerRequest.getPhone(),customerRequest.getEmail());
         Customer customerOb = customerRepository.save(customer);
         CustomerResponse customerResponse = new CustomerResponse(customerOb, false);
         return customerResponse;
     }
+
+    //TODO er ikke færdiglavet og tested i Postman i nu.
+    public CustomerResponse deleteCustomerByEmail(CustomerRequest customerRequest) {
+        return null;
+    }
 }
+
+
+
+
 
 
 /*
