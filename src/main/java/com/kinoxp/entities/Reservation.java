@@ -1,40 +1,52 @@
 package com.kinoxp.entities;
 
-
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
-//----------------Lombok.
 @Getter
 @Setter
 @NoArgsConstructor
-@Builder
-//----------------Lombok.
-
+@Table(name="reservations")
 @Entity
 public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int id;
+    private int id;
+
+    @ManyToOne (cascade = CascadeType.ALL)
+    @Column(name = "customer_id")
+    private Customer customer;
+
+    @OneToMany
+    private List<Seat> seats;
 
     @ManyToOne
-    Customer customer;
+    @Column(name = "show_id")
+    private Show show;
 
     @CreationTimestamp
-    private LocalDateTime reservationDate;
+    private LocalDate reservationDate;
 
-    public Reservation(int id,  Customer customer, LocalDateTime reservationDate) {
+    @CreationTimestamp
+    LocalDateTime created;
+    @UpdateTimestamp
+    LocalDateTime edited;
+
+    public Reservation(int id, Customer customer, List<Seat> seats, Show show, LocalDate reservationDate, LocalDateTime created, LocalDateTime edited) {
         this.id = id;
         this.customer = customer;
+        this. show = show;
+        this.seats = seats;
         this.reservationDate = reservationDate;
+        this.created = created;
+        this.edited = edited;
     }
-
-
 }

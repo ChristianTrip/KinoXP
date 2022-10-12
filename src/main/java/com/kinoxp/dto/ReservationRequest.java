@@ -14,7 +14,7 @@ import java.time.LocalDate;
 public class ReservationRequest {
 
     private int showId;
-    private String customer;
+    private String customerEmail;
     private LocalDate date;
 
 

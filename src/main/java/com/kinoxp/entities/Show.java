@@ -29,7 +29,6 @@ public class Show {
     private LocalDate date;
 
 
-
     public Show(Theater theater, ShowingTime showingTime, Movie movie, LocalDate date) {
         this.theater = theater;
         this.showingTime = showingTime;

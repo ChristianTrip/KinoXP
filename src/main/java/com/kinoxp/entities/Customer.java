@@ -18,12 +18,12 @@ import java.util.List;
 @ToString
 @EqualsAndHashCode
 //---------------Lombok.
-
+@Table(name="customers")
 @Entity //--Et object som vi skal burger i DB-tabel. Fortæller Der skal laves en table af samme navn some object.
 public class Customer {
 
     //---------------Fields / attributter.
-    @Id
+
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "customer_Id", nullable = false)
     private int id;
@@ -31,14 +31,11 @@ public class Customer {
     private String name;
     @Column(length = 50, nullable = false)
     private String phone;
-    @Column(length =  50, nullable = false)
+    @Id
+    @Column(length =  50, nullable = false, unique = true)
     private String email;
-    @Column(length = 50, nullable = false)
-    private String address;
-    @Column(length = 50, nullable = false)
-    private String city;
-    @Column(length = 50, nullable = false)
-    private String postalCode;
+
+
     //---------------Fields / attributter.
 
     //TODO vi skal lige have afklaret om de skal være her eller i Reservation.
@@ -60,14 +57,11 @@ public class Customer {
 
 
     //---------------Constructor. Vi skal have en fordi vi bruger DTO klasser.
-    public Customer(int id, String name, String phone, String email, String address, String city, String postalCode, LocalDateTime created, LocalDateTime edited) {
+    public Customer(int id, String name, String phone, String email, LocalDateTime created, LocalDateTime edited) {
         this.id = id;
         this.name = name;
         this.phone = phone;
         this.email = email;
-        this.address = address;
-        this.city = city;
-        this.postalCode = postalCode;
         this.created = created;
         this.edited = edited;
     }

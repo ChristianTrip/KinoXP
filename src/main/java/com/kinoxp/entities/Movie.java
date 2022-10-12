@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 @ToString
 //---------------Lombok.
 @Builder
-
+@Table(name="movies")
 @Entity //--Et object som vi skal burger i DB-tabel. Fortæller Der skal laves en table af samme navn some object.
 public class Movie {
     //---------------Fields / attributter.

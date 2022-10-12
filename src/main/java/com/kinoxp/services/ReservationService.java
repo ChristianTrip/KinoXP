@@ -1,8 +1,6 @@
 package com.kinoxp.services;
 
-import com.kinoxp.dto.MovieResponse;
 import com.kinoxp.dto.ReservationResponse;
-import com.kinoxp.entities.Movie;
 import com.kinoxp.entities.Reservation;
 import com.kinoxp.repositories.ReservationRepository;
 import org.springframework.stereotype.Service;
