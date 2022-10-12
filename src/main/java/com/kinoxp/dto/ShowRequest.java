@@ -14,7 +14,7 @@ import java.time.LocalDate;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class  ShowRequest {
+public class ShowRequest {
 
     private Theater theater;
     private ShowingTime showingTime;
@@ -30,7 +30,7 @@ public class  ShowRequest {
     private LocalDateTime edited;
 **/
 
-public ShowRequest(Show show){
+    public ShowRequest(Show show){
         this.theater = show.getTheater();
         this.showingTime = show.getShowingTime();
         this.movieID = getMovieID();

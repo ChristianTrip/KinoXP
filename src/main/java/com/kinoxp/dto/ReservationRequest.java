@@ -1,5 +1,6 @@
 package com.kinoxp.dto;
 
+import com.kinoxp.entities.Reservation;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,7 +16,13 @@ public class ReservationRequest {
 
     private int showId;
     private String customerEmail;
-    private LocalDate date;
+    private LocalDate reservationDate;
 
 
+
+    public ReservationRequest(Reservation reservation) {
+        this.showId = reservation.getId();
+        this.customerEmail = reservation.getCustomer().getEmail();
+        this.reservationDate = reservation.getReservationDate();
+    }
 }
