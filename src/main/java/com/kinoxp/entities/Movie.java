@@ -1,11 +1,8 @@
 package com.kinoxp.entities;
 
 import lombok.*;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 
 //---------------Lombok.
 @Getter
@@ -33,11 +30,6 @@ public class Movie {
     private int productionYear;
     @Column(name="running_time", nullable = false)
     private int runningTime; // In minuts
-    @CreationTimestamp
-    private LocalDateTime created;
-    @UpdateTimestamp
-    private LocalDateTime edited;
-    //---------------Fields / attributter.
 
 
     public Movie(String title, Genre genre, int ageLimit, int productionYear, int runningTime) {
