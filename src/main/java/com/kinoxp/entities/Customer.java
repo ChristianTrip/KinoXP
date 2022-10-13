@@ -18,21 +18,23 @@ import java.util.List;
 @ToString
 @EqualsAndHashCode
 //---------------Lombok.
-
+@Table(name="customers")
 @Entity //--Et object som vi skal burger i DB-tabel. Fortæller Der skal laves en table af samme navn some object.
 public class Customer {
 
     //---------------Fields / attributter.
-    @Id
+
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "customer_Id", nullable = false)
     private int id;
     @Column(length = 50, nullable = false)
     private String name;
-    @Column(length = 50, nullable = false)
+    @Column(length = 50, nullable = false, unique = true)
     private String phone;
-    @Column(length =  50, nullable = false)
+    @Id
+    @Column(length =  50, nullable = false, unique = true)
     private String email;
+
     //---------------Fields / attributter.
 
     //TODO vi skal lige have afklaret om de skal være her eller i Reservation.

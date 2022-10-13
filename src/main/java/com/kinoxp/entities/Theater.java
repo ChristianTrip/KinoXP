@@ -22,7 +22,6 @@ public enum Theater {
             for (int numbInRow = 1; numbInRow <= numbersInRow; numbInRow++) {
                 seats.add(new Seat(row, numbInRow));
             }
-
         }
     }
 
@@ -30,29 +29,5 @@ public enum Theater {
         return seats;
     }
 
-    public void reserveSeat(int index){
-        seats.get(index).reserveSeat();
-    }
 
-    public static void viewAllSeats(Theater theater){
-        for (Seat seat : theater.seats){
-            System.out.println(seat);
-        }
-    }
-
-    public static void viewReservedSeats(Theater theater){
-        for (Seat seat : theater.seats){
-            if (seat.isReserved()){
-                System.out.println(seat);
-            }
-        }
-    }
-
-    public static void viewAvailableSeats(Theater theater){
-        for (Seat seat : theater.seats){
-            if (!seat.isReserved()){
-                System.out.println(seat);
-            }
-        }
-    }
 }

@@ -8,15 +8,19 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
+
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class  ShowRequest {
+public class ShowRequest {
 
     private Theater theater;
     private ShowingTime showingTime;
     private long movieID;
+
+    private LocalDate date;
 
     /**
     @JsonFormat(pattern = "dd-MM-yyyy HH:mm:ss",shape = JsonFormat.Shape.STRING)
@@ -26,10 +30,11 @@ public class  ShowRequest {
     private LocalDateTime edited;
 **/
 
-public ShowRequest(Show show){
+    public ShowRequest(Show show){
         this.theater = show.getTheater();
         this.showingTime = show.getShowingTime();
         this.movieID = getMovieID();
+        this.date = show.getDate();
         //this.movie = show.getMovie();
         }
 

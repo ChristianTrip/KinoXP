@@ -30,7 +30,7 @@ public class ShowController {
 
     @PostMapping
     public void createShow(@RequestBody ShowRequest body){
-        service.createShow(body.getTheater(), body.getShowingTime(), body.getMovieID());
+        service.createShow(body.getTheater(), body.getShowingTime(), body.getMovieID(), body.getDate());
     }
 
     @PutMapping("/{showId}/{theater}/{showingTime}/{movieID}")

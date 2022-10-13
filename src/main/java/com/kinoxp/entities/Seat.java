@@ -1,39 +1,34 @@
 package com.kinoxp.entities;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@Entity
+@Table(name="seats")
 public class Seat {
 
 
+    @Id
     private int id;
-    private boolean reserved = false;
-
+    @Column(name = "seat_row")
     private int row;
     private int numbInRow;
+
+    @ManyToOne
+    private Reservation reservation;
 
     public Seat(int row, int numbInRow) {
         this.row = row;
         this.numbInRow = numbInRow;
     }
 
-    public void reserveSeat(){
-        this.reserved = true;
-    }
 
-    public int getId() {
-        return id;
-    }
-
-    public boolean isReserved() {
-        return reserved;
-    }
-
-    @Override
-    public String toString() {
-        return "Kino.Seat{" +
-                "id=" + id +
-                ", reserved=" + reserved +
-                ", row=" + row +
-                ", numbInRow=" + numbInRow +
-                '}';
-    }
 }
