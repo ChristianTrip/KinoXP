@@ -20,12 +20,12 @@ public class ShowController {
 
     @GetMapping("")
     public List<ShowResponse> getAllMovies(){
-        return service.getAllShows();
+        return service.getAllShows(false);
     }
 
     @GetMapping(path = "/{showId}")
     public ShowResponse getSingleMovie(@PathVariable Long showId){
-        return service.getSingleShow(showId);
+        return service.getSingleShow(showId, false);
     }
 
     @PostMapping

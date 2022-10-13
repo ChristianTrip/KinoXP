@@ -1,5 +1,6 @@
 package com.kinoxp.entities;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -18,6 +19,7 @@ import java.util.List;
 @Table(name="reservations")
 @Entity
 public class Reservation {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -34,20 +36,31 @@ public class Reservation {
     private Show show;
 
     @CreationTimestamp
-    private LocalDate reservationDate;
-
-    @CreationTimestamp
     LocalDateTime created;
     @UpdateTimestamp
     LocalDateTime edited;
 
-    public Reservation(int id, Customer customer, List<Seat> seats, Show show, LocalDate reservationDate, LocalDateTime created, LocalDateTime edited) {
-        this.id = id;
+
+    public Reservation(Customer customer, List<Seat> seats, Show show) {
         this.customer = customer;
-        this. show = show;
         this.seats = seats;
-        this.reservationDate = reservationDate;
-        this.created = created;
-        this.edited = edited;
+        this.show = show;
     }
+
+    public boolean reserveSeat(int row, int numbInRow){
+        List<Seat> seatsInShow = this.show.getSeats();
+        int size = seatsInShow.size();
+        for (int i = 0; i < size; i++) {
+            Seat seat = seatsInShow.get(i);
+            if (!seat.isReserved()){
+                if (seat.getRow() == row && seat.getNumbInRow() == numbInRow){
+                    seat.setReserved(true);
+                    this.seats.add(seat);
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
 }

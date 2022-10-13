@@ -38,7 +38,6 @@ public class ReservationResponse {
         this.customer = reservation.getCustomer();
         this.show = reservation.getShow();
         this.seats = reservation.getSeats();
-        this.reservationDate = reservation.getReservationDate();
         this.created = created;
         this.edited = edited;
     }

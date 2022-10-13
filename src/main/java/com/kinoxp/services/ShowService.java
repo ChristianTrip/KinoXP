@@ -36,18 +36,18 @@ public class ShowService {
         repository.save(show);
     }
 
-    public List<ShowResponse> getAllShows(){
+    public List<ShowResponse> getAllShows(boolean includeAll){
         List<Show> shows = repository.findAll();
         List<ShowResponse> showResponses = shows
                 .stream()
-                .map(show -> new ShowResponse(show))
+                .map(show -> new ShowResponse(show, includeAll))
                 .collect(Collectors.toList());
         return showResponses;
     }
 
-    public ShowResponse getSingleShow(Long showId){
+    public ShowResponse getSingleShow(Long showId, boolean includeAll){
         Show show = repository.findById(showId).orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Show with this id doesn't exist"));
-        return new ShowResponse(show);
+        return new ShowResponse(show, includeAll);
     }
 
     public void editTheater(ShowRequest showRequest, Long showId){
