@@ -9,6 +9,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -22,14 +23,14 @@ public class Reservation {
     private int id;
 
     @ManyToOne (cascade = CascadeType.ALL)
-    @Column(name = "customer_id")
+    @JoinColumn(name = "customer_id")
     private Customer customer;
 
-    @OneToMany
-    private List<Seat> seats;
+    @OneToMany(mappedBy = "reservation",cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Seat> seats = new ArrayList<>();
 
     @ManyToOne
-    @Column(name = "show_id")
+    @JoinColumn(name = "show_id")
     private Show show;
 
     @CreationTimestamp

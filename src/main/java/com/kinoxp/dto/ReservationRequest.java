@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Getter
 @Setter
@@ -17,6 +18,8 @@ public class ReservationRequest {
     private int showId;
     private String customerEmail;
     private LocalDate reservationDate;
+
+    private List<Integer> seat_ids;
 
 
 

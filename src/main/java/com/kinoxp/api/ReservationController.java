@@ -2,10 +2,7 @@ package com.kinoxp.api;
 
 import com.kinoxp.dto.ReservationResponse;
 import com.kinoxp.services.ReservationService;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -27,4 +24,11 @@ public class ReservationController {
     public List<ReservationResponse> getReservations(){
         return service.getAllReservations();
     }
+
+    @PostMapping("/{seat_id}/{show_id}/{cust_id}")
+    public void makeReservation(@PathVariable int seat_id, @PathVariable int show_id, @PathVariable int cust_id){
+
+    }
+
+
 }

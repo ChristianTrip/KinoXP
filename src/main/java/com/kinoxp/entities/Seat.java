@@ -1,18 +1,18 @@
 package com.kinoxp.entities;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @Entity
+@Table(name="seats")
 public class Seat {
 
 
@@ -22,9 +22,13 @@ public class Seat {
     private int row;
     private int numbInRow;
 
+    @ManyToOne
+    private Reservation reservation;
+
     public Seat(int row, int numbInRow) {
         this.row = row;
         this.numbInRow = numbInRow;
     }
+
 
 }

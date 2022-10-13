@@ -29,12 +29,11 @@ public class Customer {
     private int id;
     @Column(length = 50, nullable = false)
     private String name;
-    @Column(length = 50, nullable = false)
+    @Column(length = 50, nullable = false, unique = true)
     private String phone;
     @Id
     @Column(length =  50, nullable = false, unique = true)
     private String email;
-
 
     //---------------Fields / attributter.
 
