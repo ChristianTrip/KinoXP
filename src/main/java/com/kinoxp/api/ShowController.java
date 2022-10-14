@@ -24,7 +24,7 @@ public class ShowController {
     }
 
     @GetMapping(path = "/{showId}")
-    public ShowResponse getSingleMovie(@PathVariable Long showId){
+    public ShowResponse getSingleMovie(@PathVariable int showId){
         return service.getSingleShow(showId, false);
     }
 
@@ -34,29 +34,29 @@ public class ShowController {
     }
 
     @PutMapping("/{showId}/{theater}/{showingTime}/{movieID}")
-    public void editShow(@RequestBody ShowRequest body, @PathVariable Long showId) {
+    public void editShow(@RequestBody ShowRequest body, @PathVariable int showId) {
         service.editTheater(body, showId);
         service.editShowingTime(body, showId);
         service.editMovie(body, showId);
     }
 
     @PatchMapping("/theater/{showId}/{theater}")
-    public void editTheater(@RequestBody ShowRequest body, @PathVariable Long showId) {
+    public void editTheater(@RequestBody ShowRequest body, @PathVariable int showId) {
         service.editTheater(body, showId);
     }
 
     @PatchMapping("/showing-time/{showId}/{showingTime}")
-    public void editShowingTime(@RequestBody ShowRequest body, @PathVariable Long showId) {
+    public void editShowingTime(@RequestBody ShowRequest body, @PathVariable int showId) {
         service.editShowingTime(body, showId);
     }
 
     @PatchMapping("/movie/{showId}/{movie}")
-    public void editMovie(@RequestBody ShowRequest body, @PathVariable Long showId) {
+    public void editMovie(@RequestBody ShowRequest body, @PathVariable int showId) {
         service.editMovie(body, showId);
     }
 
     @DeleteMapping("/{showId}")
-    public void deleteShow(@PathVariable Long showId) {
+    public void deleteShow(@PathVariable int showId) {
         service.deleteShow(showId);
     }
 

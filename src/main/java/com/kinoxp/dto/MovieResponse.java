@@ -13,7 +13,7 @@ import lombok.Setter;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class MovieResponse {
 
-    private Long id;
+    private int id;
     private String title;
     private Genre genre;
     private int ageLimit;

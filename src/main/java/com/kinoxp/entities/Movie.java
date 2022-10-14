@@ -19,7 +19,7 @@ public class Movie {
     //---------------Fields / attributter.
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
     @Column(name = "title", nullable = false)
     private String title;
     @Column(name = "genre", nullable = false)
@@ -40,5 +40,7 @@ public class Movie {
         this.productionYear = productionYear;
         this.runningTime = runningTime;
     }
-    //---------------Constructor. Vi skal have en fordi vi bruger DTO klasser.
+
+
+
 }

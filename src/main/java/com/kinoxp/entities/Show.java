@@ -7,11 +7,13 @@ import org.hibernate.annotations.UpdateTimestamp;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter
 @Setter
 @NoArgsConstructor
+@ToString
 @Entity
 @Table(name="shows")
 public class Show {
@@ -30,7 +32,7 @@ public class Show {
     Movie movie;
 
     @OneToMany
-    private List<Seat> seats;
+    private List<Seat> seats = new ArrayList<>();
 
     private LocalDate date;
 

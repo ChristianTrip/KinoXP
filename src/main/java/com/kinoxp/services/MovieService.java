@@ -4,9 +4,13 @@ import com.kinoxp.dto.MovieRequest;
 import com.kinoxp.dto.MovieResponse;
 import com.kinoxp.entities.Movie;
 import com.kinoxp.repositories.MovieRepository;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
+import java.net.http.HttpResponse;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 
 @Service
@@ -25,6 +29,13 @@ public class MovieService {
                         .map(movie -> new MovieResponse(movie))
                         .collect(Collectors.toList());
         return movieResponses;
+    }
+
+    public MovieResponse getMovieById(int id){
+        Movie movie = repository.findById(id).orElseThrow(
+                () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Movie with id: " + id + " not found"));
+        MovieResponse response = new MovieResponse(movie);
+        return response;
     }
 
     public MovieResponse addMovie(MovieRequest movie){

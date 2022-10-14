@@ -18,7 +18,7 @@ public class ShowRequest {
 
     private Theater theater;
     private ShowingTime showingTime;
-    private long movieID;
+    private int movieID;
 
     private LocalDate date;
 

@@ -30,7 +30,7 @@ public class CustomerService {
     }
 
     public CustomerResponse getCustomer(String email) {
-        Optional<Customer> customer = customerRepository.findByEmail(email);
+        Optional<Customer> customer = customerRepository.findById(email);
        if(customer.isPresent()){
            System.out.println(customer.get().getEmail());
            return new CustomerResponse(customer.get(), false);

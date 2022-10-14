@@ -24,12 +24,12 @@ public class ReservationController {
     }
 
     @PostMapping("/{seat_id}/{show_id}/{cust_id}")
-    public void makeReservation(@PathVariable int seat_id, @PathVariable int show_id, @PathVariable int cust_id){
+    public void makeReservationWithVariables(@PathVariable int seat_id, @PathVariable int show_id, @PathVariable int cust_id){
 
     }
 
     @PostMapping("/")
-    public void makeReservation1(@RequestBody ReservationRequest reservationRequest){
+    public void makeReservationWithBody(@RequestBody ReservationRequest reservationRequest){
         service.addReservation(reservationRequest);
     }
 

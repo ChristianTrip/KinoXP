@@ -41,8 +41,11 @@ public class ReservationService {
 
     public boolean addReservation(ReservationRequest request){
 
+
+
         Show show = showRepository.findById(request.getShowId()).orElseThrow(
                         () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "No show with this id"));
+
         List<Integer> showSeatIds = show.getSeats().stream().map(seat -> seat.getId()).collect(Collectors.toList());
         Customer customer = customerRepository.findById(request.getCustomerEmail()).orElseThrow(
                 () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "No customer with this email"));
