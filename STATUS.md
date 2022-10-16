@@ -21,7 +21,10 @@ Christian:
 **insert personal accomplishments**
 
 Andreas:
-**insert personal accomplishments**
+Jeg har været meget indenover vores github branching samt actions og i fælleskab har vi kæmpet med opsættelsen af Azure samt docker. Envidere havde vi nogle problemer med antal af connection til vores database som lukkede adgangen for query's. Det fik vi løst ved at genstarter hele docker images samt øge antallet af connections i SQL så vi ikke løb ind i samme probblem. Kodemæssigt har jeg hovedesagligt siddet på frontend og har mer eller mindre været indover alle filerne HTML / CSS  / JS.
+Backend har jeg som udgangspunkt kun arbejdet i under opsættelse eller hvis jeg skulle fortage nogle ændringer, så det gav mening i forhold til frontend. Vi oplevet nogle problemer med at have mer end et modal med identiske input elemters id. Det fik vi løst vha. af en if sætning der ændrer i inputes id afhængig hvilken function der blev kaldt f.eks. "<input id="id-column-" + "delete">". Jeg vil gerne have opdelt nogle functionerne i flere filer/mapper så koden blev mer læsbar, såsom optionsForDropdowns() men det var der desværre ikke tid til. Vi nåede aldrig færdigegøre reservation, men baseret på det eksisterende frontend kan meget af koden genbruges til dette. 
+
+
 
 
 Reflection on the value of the last to project weeks:
