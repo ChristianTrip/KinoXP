@@ -27,7 +27,7 @@ public class MovieService {
         return movieResponses;
     }
     
-        public MovieResponse getMovieById(long id){
+        public MovieResponse getMovieById(Long id){
         Movie movie = repository.findById(id).orElseThrow(
                 () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Movie with id: " + id + " not found"));
         MovieResponse response = new MovieResponse(movie);
