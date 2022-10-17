@@ -27,8 +27,22 @@ Backend har jeg som udgangspunkt kun arbejdet i under opsættelse eller hvis jeg
 
 
 
-Reflection on the value of the last to project weeks:
-**insert reflections here**
+Reflection on the value of the last two project weeks:
+We've been forced to deal with much troubleshooting in regards to the technical aspects of the project.
+Specifically, the deployment of the database proved to cause some issues, and furthermore triggered a chain reaction of other minor problems that ultimately hindered our collective flow (at least in the inception of the project).
+
+As a result of this hinderance, we weren't able to delegate tasks as effectivly in the beginning, which meant that most of the time was spent around a single computer, contemplating and discussing questions related to the future course of the project.
+After these initial hurdles we were however much better at effectivly spreading out the workload (this being from the beginning of the second sprint/iteration).
+
+Looking back, we would have liked to be a little more structured in our approaches.
+The frequency in which we conducted these Scrum meetings were too far in between, and additionally, when we held them, they tended to far exceed the goal of 15 minutes.
+
+We would also have liked to more so utilize the opportunity that this project has been.
+For the most part, the members worked on the things that they were already good at, which is just a waste.
+
+On the brighter side, we've had a good time working together, despite the group being a mashup of people not having worked together previously.
+
+
 
 Link to group presentation:
 **insert link here**
