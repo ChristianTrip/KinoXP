@@ -26,13 +26,6 @@ public class MovieService {
                         .collect(Collectors.toList());
         return movieResponses;
     }
-    
-        public MovieResponse getMovieById(Long id){
-        Movie movie = repository.findById(id).orElseThrow(
-                () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Movie with id: " + id + " not found"));
-        MovieResponse response = new MovieResponse(movie);
-        return response;
-    }
 
     public MovieResponse addMovie(MovieRequest movie){
         Movie newMovie = MovieRequest.getMovieEntity(movie);
