@@ -47,15 +47,6 @@ class MovieServiceTest {
     }
 
     @Test
-    void getMovieById() throws Exception {
-        Movie movie = new Movie("First Blood", Genre.ACTION, 16, 1982, 93);
-        Mockito.when(movieRepository.findById(1L)).thenReturn(Optional.of(movie));
-        MovieResponse movieResponse = movieService.getMovieById(1L);
-        assertEquals("First Blood", movieResponse.getTitle());
-    }
-
-
-    @Test
     void addMovie() throws Exception {
         Movie movie = new Movie("First Blood", Genre.ACTION, 16, 1982, 93);
 
