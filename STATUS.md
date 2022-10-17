@@ -53,4 +53,5 @@ On the brighter side, we've had a good time working together, despite the group 
 
 
 Link to group presentation:
-**insert link here**
+https://youtu.be/1-x75i0PVfM
+
