@@ -19,7 +19,7 @@ Nearing toward the end of the project, I did some PP with Christian, where we at
 
 
 **Theis:**
-insert personal accomplishments
+Jeg startede ud med at lave noget pair programming med Jacob, hvori vi begyndte på at lave hvad der hørte til de diverse Show klasser, dette inkluderede diverse dto'er, entities, repos mm. Derudover var jeg med til at sætte den virtuelle maskine op, hvori vi opsatte vores Docker miljø til at oprette et image af vores database. Jeg var ligeledes også inde over en del frontend, her var jeg inde over diverse metoder i hhv. shows.js og shows.html, primært baksede jeg med at få delete metoden til at virke. I konteksten til frontenden lavede Andreas og jeg også noget pair programming, da der forvoldte sig nogle problemer ift. at kunne fetche den rigtige data, og få oprettet de rigtige endpoints. Imod slutningen af projektet arbejdede jeg også på nogle unit tests i form af ShowService klassen.
 
 **Robert:**
 insert personal accomplishments
