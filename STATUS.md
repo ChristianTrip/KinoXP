@@ -18,7 +18,15 @@ Robert:
 **insert personal accomplishments**
 
 Christian:
-**insert personal accomplishments**
+Jeg startede ud med at lave et klasse- og EER- diagram så vi havde noget at arbejde ud fra.
+Jeg påtog mig opgaven at lave et GitHub repository, både for backend- og frontend-delen, hvor jeg inviterede de andre fra gruppen. 
+Ud fra vores klassediagram lavede jeg det første projekt (dependencies, start klasser, pakke struktur) der blev til vores backend repository (KinoXP).
+Ligedes stod jeg for at oprette alt der relaterede sig til deploye delen på Azure. Det vil sige virtuel machine, app service, static web app. Vores skole Azure license tillod os ikke at dele adgang til disse ressourcer, så det var kun mig der havde adgang til det. 
+På vores VM installerede jeg Docker, og oprettede et image hvor vi lavede vores MySql database.
+Jeg oprettede også en SSH nøgle som vi alle fik lagt ned lokalt, så vi alle kunne tilgå vores VM og herved vores Docker miljø som kørte vores database.
+Herudover arbejde jeg på Movie klasserne (repository, service, controller, dto’er, tests).
+Jeg lavde også vores Enum klasser (Theaters, ShowingTimes, Genres) og seat klassen.
+Jeg arbejde også på at få vores reservations klasser til at fungere, men det blev aldrig færdiggjort da vi løb tør for tid og løb ind i problemer med at reservere flere seats, som vi ikke kunne løse.
 
 Andreas:
 Jeg har været meget indenover vores github branching samt actions og i fælleskab har vi kæmpet med opsættelsen af Azure samt docker. Envidere havde vi nogle problemer med antal af connection til vores database som lukkede adgangen for query's. Det fik vi løst ved at genstarter hele docker images samt øge antallet af connections i SQL så vi ikke løb ind i samme probblem. Kodemæssigt har jeg hovedesagligt siddet på frontend og har mer eller mindre været indover alle filerne HTML / CSS  / JS.
