@@ -8,8 +8,15 @@ Most, if not all of the frontend code is applicable to the functionality that wo
 (sprint 2/requirements from second meeting with product owner).
 As for the backend code, we have yet to accomplish the finalization of the creation of a reservation.
 
-Jacob:
-**insert personal accomplishments**
+**Jacob:**
+I have functioned in the role as Scrum Master and have been a little involved with everything, most of all the backend development and the technological aspects of the project.
+I’ve used copious amounts of time troubleshooting numerous conflicts relating to Git. If someone had forgotten to create and switch to a new branch before they had begun coding, I would attempt to make sure that we avoided data loss and unnecessary conflicts.
+Additionally, I’ve set up the SSH config files for everyone in the group.
+During the first sprint I did some pair programming (PP) with Andreas where we looked at the retrieval of shows and movies from the database, to the client (Mainly Javascript).
+Also, most of the DTO’s and the show and movie classes themselves have I been involved with creating and further modifying throughout the project. 
+In this context I did some PP with Theis in the creation of the related service layer.
+Nearing toward the end of the project, I did some PP with Christian, where we attempted to crack the code of the registration functionality, however, we didn’t manage to successfully implement this code, due to time restrictions.
+
 
 Theis:
 **insert personal accomplishments**
