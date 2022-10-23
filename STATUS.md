@@ -66,4 +66,4 @@ On the brighter side, we've had a good time working together, despite the group 
 
 
 Link to group presentation:
-**insert link here**
+https://www.youtube.com/watch?v=1-x75i0PVfM
